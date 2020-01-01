@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom'
 
 import { HashRouter, Route, Switch } from 'react-router-dom'
 
-import Adding from './components/subjects/Adding'
+import AddingUpToTen from './components/subjects/AddingUpToTen'
 import Home from './components/pages/Home'
+import Footer from './components/pages/Footer'
+import Navbar from './components/pages/Navbar'
+
+import 'bulma'
+import './style.scss'
 
 class App extends React.Component {
 
@@ -12,11 +17,13 @@ class App extends React.Component {
   render() {
     return (
       <HashRouter>
+        <Navbar/>
 
         <Switch>
-          <Route path="/adding" component={Adding} />
+          <Route path="/AddingUpToTen" component={AddingUpToTen} />
           <Route path="/" component={Home} />
         </Switch>
+        <Footer/>
       </HashRouter>
     )
   }

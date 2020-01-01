@@ -12,7 +12,7 @@ const exercise9 = Math.ceil(Math.random(10) * 10) + ' + ' + Math.ceil(Math.rando
 const exercise10 = Math.ceil(Math.random(10) * 10) + ' + ' + Math.ceil(Math.random(10) * 10)
 
 let ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10
-class Adding extends React.Component {
+class AddingUpToTen extends React.Component {
   constructor(){
     super()
     this.state = {
@@ -25,7 +25,8 @@ class Adding extends React.Component {
       exercise7: eval(exercise7),
       exercise8: eval(exercise8),
       exercise9: eval(exercise9),
-      exercise10: eval(exercise10)
+      exercise10: eval(exercise10),
+      checkingAnswer: ''
 
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -42,52 +43,42 @@ class Adding extends React.Component {
   }
 
   handleChange1(e) {
-    console.log(e.target.value)
     ans1 = e.target.value
 
   }
   handleChange2(e) {
-    console.log(e.target.value)
     ans2 = e.target.value
 
   }
   handleChange3(e) {
-    console.log(e.target.value)
     ans3 = e.target.value
 
   }
   handleChange4(e) {
-    console.log(e.target.value)
     ans4 = e.target.value
 
   }
   handleChange5(e) {
-    console.log(e.target.value)
     ans5 = e.target.value
 
   }
   handleChange6(e) {
-    console.log(e.target.value)
     ans6 = e.target.value
 
   }
   handleChange7(e) {
-    console.log(e.target.value)
     ans7 = e.target.value
 
   }
   handleChange8(e) {
-    console.log(e.target.value)
     ans8 = e.target.value
 
   }
   handleChange9(e) {
-    console.log(e.target.value)
     ans9 = e.target.value
 
   }
   handleChange10(e) {
-    console.log(e.target.value)
     ans10 = e.target.value
 
   }
@@ -101,39 +92,47 @@ class Adding extends React.Component {
 
 
   render(){
-    console.log(this.state)
+    const checked = <img src="https://i.imgur.com/sR0wqoQ.png"/>
+    const error = <img src="https://i.imgur.com/jpk3Rfr.png"/>
     return (
       <section className="section">
-        <div className="container">
+        <div className="container addingUpToTen">
           <div className="exercise">
-            {exercise1} = <input className="input" type="answer" name="answer1" onChange={this.handleChange1} />  {this.state.exercise1 === this.state.answer1 &&<span id="answer1">circle</span>}
+            {exercise1} = <input 
+            className="input" 
+            type="answer" 
+            name="answer1" 
+            onChange={this.handleChange1} 
+            />
+            {this.state.checkingAnswer} 
+            {this.state.exercise1 === this.state.answer1 &&<span id="answer1">{checked}</span> || this.state.exercise1 !== this.state.answer1 &&<span id="answer1">{error}</span>}
           </div>
           <div className="exercise">
-            {exercise2} = <input className="input" type="answer" name="answer2" onChange={this.handleChange2} />  {this.state.exercise2 === this.state.answer2 &&<span id="answer2">circle</span>}
+            {exercise2} = <input className="input" type="answer" name="answer2" onChange={this.handleChange2} />  {this.state.exercise2 === this.state.answer2 &&<span id="answer2">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise3} = <input className="input" type="answer" name="answer3" onChange={this.handleChange3} />  {this.state.exercise3 === this.state.answer3 &&<span id="answer3">circle</span>}
+            {exercise3} = <input className="input" type="answer" name="answer3" onChange={this.handleChange3} />  {this.state.exercise3 === this.state.answer3 &&<span id="answer3">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise4} = <input className="input" type="answer" name="answer4" onChange={this.handleChange4} />  {this.state.exercise4 === this.state.answer4 &&<span id="answer4">circle</span>}
+            {exercise4} = <input className="input" type="answer" name="answer4" onChange={this.handleChange4} />  {this.state.exercise4 === this.state.answer4 &&<span id="answer4">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise5} = <input className="input" type="answer" name="answer5" onChange={this.handleChange5} />  {this.state.exercise5 === this.state.answer5 &&<span id="answer5">circle</span>}
+            {exercise5} = <input className="input" type="answer" name="answer5" onChange={this.handleChange5} />  {this.state.exercise5 === this.state.answer5 &&<span id="answer5">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise6} = <input className="input" type="answer" name="answer6" onChange={this.handleChange6} />  {this.state.exercise6 === this.state.answer6 &&<span id="answer6">circle</span>}
+            {exercise6} = <input className="input" type="answer" name="answer6" onChange={this.handleChange6} />  {this.state.exercise6 === this.state.answer6 &&<span id="answer6">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise7} = <input className="input" type="answer" name="answer7" onChange={this.handleChange7} />  {this.state.exercise7 === this.state.answer7 &&<span id="answer7">circle</span>}
+            {exercise7} = <input className="input" type="answer" name="answer7" onChange={this.handleChange7} />  {this.state.exercise7 === this.state.answer7 &&<span id="answer7">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise8} = <input className="input" type="answer" name="answer8" onChange={this.handleChange8} />  {this.state.exercise8 === this.state.answer8 &&<span id="answer8">circle</span>}
+            {exercise8} = <input className="input" type="answer" name="answer8" onChange={this.handleChange8} />  {this.state.exercise8 === this.state.answer8 &&<span id="answer8">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise9} = <input className="input" type="answer" name="answer9" onChange={this.handleChange9} />  {this.state.exercise9 === this.state.answer9 &&<span id="answer9">circle</span>}
+            {exercise9} = <input className="input" type="answer" name="answer9" onChange={this.handleChange9} />  {this.state.exercise9 === this.state.answer9 &&<span id="answer9">{checked}</span>}
           </div>
           <div className="exercise">
-            {exercise10} = <input className="input" type="answer" name="answer10" onChange={this.handleChange10} />  {this.state.exercise10 === this.state.answer10 &&<span id="answer10">circle</span>}
+            {exercise10} = <input className="input" type="answer" name="answer10" onChange={this.handleChange10} />  {this.state.exercise10 === this.state.answer10 &&<span id="answer10">{checked}</span>}
           </div>
           <form onSubmit={this.handleSubmit}><button className="button"> Submit Answers</button></form>
 
@@ -143,4 +142,4 @@ class Adding extends React.Component {
   }
 }
 
-export default Adding
+export default AddingUpToTen
