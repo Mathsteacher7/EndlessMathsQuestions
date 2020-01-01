@@ -8,7 +8,8 @@
   "scripts": {
     "build": "webpack -p",
     "serve": "webpack-dev-server",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
-    "eslint-plugin-react": "^7.16.0"
+    "eslint-plugin-react": "^7.16.0",
+    "gh-pages": "^2.1.1"
   }
 }
