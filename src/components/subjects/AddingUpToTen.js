@@ -38,7 +38,8 @@ class AddingUpToTen extends React.Component {
       answer7: 0,
       answer8: 0,
       answer9: 0,
-      answer10: 0
+      answer10: 0,
+      ans1: ''
       
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -58,7 +59,8 @@ class AddingUpToTen extends React.Component {
 
 
   handleChange1(e) {
-    ans1 = e.target.value
+    this.setState({ ans1: e.target.value })
+    // ans1 = e.target.value
   }
   handleChange2(e) {
     ans2 = e.target.value
@@ -89,7 +91,7 @@ class AddingUpToTen extends React.Component {
   }
 
   handleSubmit(e){
-    this.setState({ answer1: +ans1, answer2: +ans2, answer3: +ans3, answer4: +ans4, answer5: +ans5, answer6: +ans6, answer7: +ans7, answer8: +ans8, answer9: +ans9, answer10: +ans10})
+    this.setState({ answer1: +this.state.ans1, answer2: +ans2, answer3: +ans3, answer4: +ans4, answer5: +ans5, answer6: +ans6, answer7: +ans7, answer8: +ans8, answer9: +ans9, answer10: +ans10})
   }
 
   handleReset(){
@@ -116,7 +118,8 @@ class AddingUpToTen extends React.Component {
       answer7: 0,
       answer8: 0,
       answer9: 0,
-      answer10: 0
+      answer10: 0,
+      ans1: ''
     })
   }
 
@@ -126,7 +129,6 @@ class AddingUpToTen extends React.Component {
   render(){
     const checked = <img src="https://i.imgur.com/sR0wqoQ.png"/>
     const error = <img src="https://i.imgur.com/jpk3Rfr.png"/>
-    console.log(exercise1)
     return (
       <section className="section">
         <div className="container addingUpToTen">
@@ -134,8 +136,9 @@ class AddingUpToTen extends React.Component {
             {exercises[0]} = <input 
             className="input" 
             type="answer" 
-            name="answer1" 
-            onChange={this.handleChange1} 
+            name="answer1"
+            onChange={this.handleChange1}
+            value={this.state.ans1}
             />
             {(this.state.answer1 === 0) || 
              (this.state.exercise1 === this.state.answer1 && checked) || 
