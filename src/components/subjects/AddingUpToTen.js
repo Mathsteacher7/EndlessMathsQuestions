@@ -1,20 +1,23 @@
 import React from 'react'
 
-let exercise1 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise2 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise3 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise4 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise5 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise6 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise7 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise8 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise9 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
-let exercise10 = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
+const exercises = [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9, exercise10]
+function getExercise(){
+  const exercise = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
+  return exercise
+}
+function populateExercises(){
+  for (let i = 0; i < 10; i++){
+    exercises[i] = getExercise(i)
+  }
+}
+let exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9, exercise10
 
 let ans1 = 0, ans2 = 0, ans3 = 0, ans4 = 0, ans5 = 0, ans6 = 0, ans7 = 0, ans8 = 0, ans9 = 0, ans10 = 0
 class AddingUpToTen extends React.Component {
   constructor(){
     super()
+    populateExercises()
+    exercise1 = exercises[0], exercise2 = exercises[1], exercise3 = exercises[2], exercise4 = exercises[3], exercise5 = exercises[4], exercise6 = exercises[5], exercise7 = exercises[6], exercise8 = exercises[7], exercise9 = exercises[8], exercise10 = exercises[9]
     this.state = {
       exercise1: eval(exercise1),
       exercise2: eval(exercise2),
@@ -52,6 +55,8 @@ class AddingUpToTen extends React.Component {
     this.handleChange10 = this.handleChange10.bind(this)
   }
 
+
+
   handleChange1(e) {
     ans1 = e.target.value
   }
@@ -87,8 +92,32 @@ class AddingUpToTen extends React.Component {
     this.setState({ answer1: +ans1, answer2: +ans2, answer3: +ans3, answer4: +ans4, answer5: +ans5, answer6: +ans6, answer7: +ans7, answer8: +ans8, answer9: +ans9, answer10: +ans10})
   }
 
-  handleReset(e){
-    console.log(e)
+  handleReset(){
+    populateExercises()
+    exercise1 = exercises[0], exercise2 = exercises[1], exercise3 = exercises[2], exercise4 = exercises[3], exercise5 = exercises[4], exercise6 = exercises[5], exercise7 = exercises[6], exercise8 = exercises[7], exercise9 = exercises[8], exercise10 = exercises[9]
+    ans1 = 0, ans2 = 0, ans3 = 0, ans4 = 0, ans5 = 0, ans6 = 0, ans7 = 0, ans8 = 0, ans9 = 0, ans10 = 0
+    this.setState({
+      exercise1: eval(exercise1),
+      exercise2: eval(exercise2),
+      exercise3: eval(exercise3),
+      exercise4: eval(exercise4),
+      exercise5: eval(exercise5),
+      exercise6: eval(exercise6),
+      exercise7: eval(exercise7),
+      exercise8: eval(exercise8),
+      exercise9: eval(exercise9),
+      exercise10: eval(exercise10),
+      answer1: 0,
+      answer2: 0,
+      answer3: 0,
+      answer4: 0,
+      answer5: 0,
+      answer6: 0,
+      answer7: 0,
+      answer8: 0,
+      answer9: 0,
+      answer10: 0
+    })
   }
 
 
@@ -97,11 +126,12 @@ class AddingUpToTen extends React.Component {
   render(){
     const checked = <img src="https://i.imgur.com/sR0wqoQ.png"/>
     const error = <img src="https://i.imgur.com/jpk3Rfr.png"/>
+    console.log(exercise1)
     return (
       <section className="section">
         <div className="container addingUpToTen">
           <div className="exercise">
-            {exercise1} = <input 
+            {exercises[0]} = <input 
             className="input" 
             type="answer" 
             name="answer1" 
@@ -113,7 +143,7 @@ class AddingUpToTen extends React.Component {
             }
           </div>
           <div className="exercise">
-            {exercise2} = <input 
+            {exercises[1]} = <input 
             className="input" 
             type="answer" 
             name="answer2" 
@@ -125,7 +155,7 @@ class AddingUpToTen extends React.Component {
             }
           </div>
           <div className="exercise">
-            {exercise3} = <input 
+            {exercises[2]} = <input 
             className="input" 
             type="answer" 
             name="answer3" 
@@ -137,7 +167,7 @@ class AddingUpToTen extends React.Component {
             }          
           </div>
           <div className="exercise">
-            {exercise4} = <input 
+            {exercises[3]} = <input 
             className="input" 
             type="answer" 
             name="answer4" 
@@ -149,7 +179,7 @@ class AddingUpToTen extends React.Component {
             }   
           </div>
           <div className="exercise">
-            {exercise5} = <input 
+            {exercises[4]} = <input 
             className="input" 
             type="answer" 
             name="answer5" 
@@ -161,7 +191,7 @@ class AddingUpToTen extends React.Component {
             }             
           </div>
           <div className="exercise">
-            {exercise6} = <input 
+            {exercises[5]} = <input 
             className="input" 
             type="answer" 
             name="answer6" 
@@ -173,7 +203,7 @@ class AddingUpToTen extends React.Component {
             }            
           </div>
           <div className="exercise">
-            {exercise7} = <input 
+            {exercises[6]} = <input 
             className="input" 
             type="answer" 
             name="answer7" 
@@ -185,7 +215,7 @@ class AddingUpToTen extends React.Component {
             }           
           </div>
           <div className="exercise">
-            {exercise8} = <input 
+            {exercises[7]} = <input 
             className="input" 
             type="answer" 
             name="answer8" 
@@ -197,7 +227,7 @@ class AddingUpToTen extends React.Component {
             }                
           </div>
           <div className="exercise">
-            {exercise9} = <input 
+            {exercises[8]} = <input 
             className="input" 
             type="answer" 
             name="answer9" 
@@ -209,7 +239,7 @@ class AddingUpToTen extends React.Component {
             }              
           </div>
           <div className="exercise">
-            {exercise10} = <input 
+            {exercises[9]} = <input 
             className="input" 
             type="answer" 
             name="answer10" 
