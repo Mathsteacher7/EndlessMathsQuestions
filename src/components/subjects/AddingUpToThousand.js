@@ -1,10 +1,19 @@
 import React from 'react'
 
 const exercises = [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9, exercise10]
+
 function getExercise(){
-  const exercise = Math.ceil(Math.random() * 10) + ' + ' + Math.ceil(Math.random() * 10)
+  let firstNumber = 1, secondNumber = 1
+  while (firstNumber < 100){
+      firstNumber = Math.ceil(Math.random() * 999)
+  }
+  while (secondNumber < 100){
+      secondNumber = Math.ceil(Math.random() * 999)
+  }
+  const exercise = firstNumber + ' + ' + secondNumber
   return exercise
 }
+
 function populateExercises(){
   for (let i = 0; i < 10; i++){
     exercises[i] = getExercise(i)
