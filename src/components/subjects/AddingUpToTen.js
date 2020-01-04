@@ -39,7 +39,16 @@ class AddingUpToTen extends React.Component {
       answer8: 0,
       answer9: 0,
       answer10: 0,
-      ans1: ''
+      ans1: '',
+      ans2: '',
+      ans3: '',
+      ans4: '',
+      ans5: '',
+      ans6: '',
+      ans7: '',
+      ans8: '',
+      ans9: '',
+      ans10: ''
       
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -60,38 +69,48 @@ class AddingUpToTen extends React.Component {
 
   handleChange1(e) {
     this.setState({ ans1: e.target.value })
-    // ans1 = e.target.value
   }
   handleChange2(e) {
-    ans2 = e.target.value
+    this.setState({ ans2: e.target.value })
   }
   handleChange3(e) {
-    ans3 = e.target.value
+    this.setState({ ans3: e.target.value })
   }
   handleChange4(e) {
-    ans4 = e.target.value
+    this.setState({ ans4: e.target.value })
   }
   handleChange5(e) {
-    ans5 = e.target.value
+    this.setState({ ans5: e.target.value })
   }
   handleChange6(e) {
-    ans6 = e.target.value
+    this.setState({ ans6: e.target.value })
   }
   handleChange7(e) {
-    ans7 = e.target.value
+    this.setState({ ans7: e.target.value })
   }
   handleChange8(e) {
-    ans8 = e.target.value
+    this.setState({ ans8: e.target.value })
   }
   handleChange9(e) {
-    ans9 = e.target.value
+    this.setState({ ans9: e.target.value })
   }
   handleChange10(e) {
-    ans10 = e.target.value
+    this.setState({ ans10: e.target.value })
   }
 
   handleSubmit(e){
-    this.setState({ answer1: +this.state.ans1, answer2: +ans2, answer3: +ans3, answer4: +ans4, answer5: +ans5, answer6: +ans6, answer7: +ans7, answer8: +ans8, answer9: +ans9, answer10: +ans10})
+    this.setState({ 
+      answer1: +this.state.ans1, 
+      answer2: +this.state.ans2, 
+      answer3: +this.state.ans3, 
+      answer4: +this.state.ans4, 
+      answer5: +this.state.ans5, 
+      answer6: +this.state.ans6, 
+      answer7: +this.state.ans7, 
+      answer8: +this.state.ans8, 
+      answer9: +this.state.ans9, 
+      answer10: +this.state.ans10
+    })
   }
 
   handleReset(){
@@ -119,7 +138,16 @@ class AddingUpToTen extends React.Component {
       answer8: 0,
       answer9: 0,
       answer10: 0,
-      ans1: ''
+      ans1: '',
+      ans2: '',
+      ans3: '',
+      ans4: '',
+      ans5: '',
+      ans6: '',
+      ans7: '',
+      ans8: '',
+      ans9: '',
+      ans10: ''
     })
   }
 
@@ -151,6 +179,7 @@ class AddingUpToTen extends React.Component {
             type="answer" 
             name="answer2" 
             onChange={this.handleChange2} 
+            value={this.state.ans2}
             />  
             {(this.state.answer2 === 0) || 
              (this.state.exercise2 === this.state.answer2 && checked) || 
@@ -163,6 +192,7 @@ class AddingUpToTen extends React.Component {
             type="answer" 
             name="answer3" 
             onChange={this.handleChange3} 
+            value={this.state.ans3}
             />  
             {(this.state.answer3 === 0) || 
              (this.state.exercise3 === this.state.answer3 && checked) || 
@@ -175,6 +205,7 @@ class AddingUpToTen extends React.Component {
             type="answer" 
             name="answer4" 
             onChange={this.handleChange4} 
+            value={this.state.ans4}
             />  
             {(this.state.answer4 === 0) || 
              (this.state.exercise4 === this.state.answer4 && checked) || 
@@ -187,6 +218,7 @@ class AddingUpToTen extends React.Component {
             type="answer" 
             name="answer5" 
             onChange={this.handleChange5} 
+            value={this.state.ans5}
             />  
             {(this.state.answer5 === 0) || 
              (this.state.exercise5 === this.state.answer5 && checked) || 
@@ -198,7 +230,8 @@ class AddingUpToTen extends React.Component {
             className="input" 
             type="answer" 
             name="answer6" 
-            onChange={this.handleChange6} 
+            onChange={this.handleChange6}
+            value={this.state.ans6}
             />  
             {(this.state.answer6 === 0) || 
              (this.state.exercise6 === this.state.answer6 && checked) || 
@@ -210,7 +243,8 @@ class AddingUpToTen extends React.Component {
             className="input" 
             type="answer" 
             name="answer7" 
-            onChange={this.handleChange7} 
+            onChange={this.handleChange7}
+            value={this.state.ans7}
             />  
             {(this.state.answer7 === 0) || 
              (this.state.exercise7 === this.state.answer7 && checked) || 
@@ -222,7 +256,8 @@ class AddingUpToTen extends React.Component {
             className="input" 
             type="answer" 
             name="answer8" 
-            onChange={this.handleChange8} 
+            onChange={this.handleChange8}
+            value={this.state.ans8}
             />  
             {(this.state.answer8 === 0) || 
              (this.state.exercise8 === this.state.answer8 && checked) || 
@@ -234,7 +269,8 @@ class AddingUpToTen extends React.Component {
             className="input" 
             type="answer" 
             name="answer9" 
-            onChange={this.handleChange9} 
+            onChange={this.handleChange9}
+            value={this.state.ans9}
             />  
             {(this.state.answer9 === 0) || 
              (this.state.exercise9 === this.state.answer9 && checked) || 
@@ -247,6 +283,7 @@ class AddingUpToTen extends React.Component {
             type="answer" 
             name="answer10" 
             onChange={this.handleChange10} 
+            value={this.state.ans10}
             />  
             {(this.state.answer10 === 0) || 
              (this.state.exercise10 === this.state.answer10 && checked) || 
