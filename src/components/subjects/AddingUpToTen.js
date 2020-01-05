@@ -19,37 +19,16 @@ class AddingUpToTen extends React.Component {
     populateExercises()
     exercise1 = exercises[0], exercise2 = exercises[1], exercise3 = exercises[2], exercise4 = exercises[3], exercise5 = exercises[4], exercise6 = exercises[5], exercise7 = exercises[6], exercise8 = exercises[7], exercise9 = exercises[8], exercise10 = exercises[9]
     this.state = {
-      exercise1: eval(exercise1),
-      exercise2: eval(exercise2),
-      exercise3: eval(exercise3),
-      exercise4: eval(exercise4),
-      exercise5: eval(exercise5),
-      exercise6: eval(exercise6),
-      exercise7: eval(exercise7),
-      exercise8: eval(exercise8),
-      exercise9: eval(exercise9),
-      exercise10: eval(exercise10),
-      answer1: 0,
-      answer2: 0,
-      answer3: 0,
-      answer4: 0,
-      answer5: 0,
-      answer6: 0,
-      answer7: 0,
-      answer8: 0,
-      answer9: 0,
-      answer10: 0,
-      ans1: '',
-      ans2: '',
-      ans3: '',
-      ans4: '',
-      ans5: '',
-      ans6: '',
-      ans7: '',
-      ans8: '',
-      ans9: '',
-      ans10: ''
-      
+      exercise1: eval(exercise1), answer1: 0, ans1: '',
+      exercise2: eval(exercise2), answer2: 0, ans2: '',
+      exercise3: eval(exercise3), answer3: 0, ans3: '',
+      exercise4: eval(exercise4), answer4: 0, ans4: '',
+      exercise5: eval(exercise5), answer5: 0, ans5: '',
+      exercise6: eval(exercise6), answer6: 0, ans6: '',
+      exercise7: eval(exercise7), answer7: 0, ans7: '',
+      exercise8: eval(exercise8), answer8: 0, ans8: '',
+      exercise9: eval(exercise9), answer9: 0, ans9: '',
+      exercise10: eval(exercise10), answer10: 0, ans10: ''      
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleReset = this.handleReset.bind(this)
@@ -67,36 +46,16 @@ class AddingUpToTen extends React.Component {
 
 
 
-  handleChange1(e) {
-    this.setState({ ans1: e.target.value })
-  }
-  handleChange2(e) {
-    this.setState({ ans2: e.target.value })
-  }
-  handleChange3(e) {
-    this.setState({ ans3: e.target.value })
-  }
-  handleChange4(e) {
-    this.setState({ ans4: e.target.value })
-  }
-  handleChange5(e) {
-    this.setState({ ans5: e.target.value })
-  }
-  handleChange6(e) {
-    this.setState({ ans6: e.target.value })
-  }
-  handleChange7(e) {
-    this.setState({ ans7: e.target.value })
-  }
-  handleChange8(e) {
-    this.setState({ ans8: e.target.value })
-  }
-  handleChange9(e) {
-    this.setState({ ans9: e.target.value })
-  }
-  handleChange10(e) {
-    this.setState({ ans10: e.target.value })
-  }
+  handleChange1(e) { this.setState({ ans1: e.target.value }) }
+  handleChange2(e) { this.setState({ ans2: e.target.value }) }
+  handleChange3(e) { this.setState({ ans3: e.target.value }) }
+  handleChange4(e) { this.setState({ ans4: e.target.value }) }
+  handleChange5(e) { this.setState({ ans5: e.target.value }) }
+  handleChange6(e) { this.setState({ ans6: e.target.value }) }
+  handleChange7(e) { this.setState({ ans7: e.target.value }) }
+  handleChange8(e) { this.setState({ ans8: e.target.value }) }
+  handleChange9(e) { this.setState({ ans9: e.target.value }) }
+  handleChange10(e) { this.setState({ ans10: e.target.value }) }
 
   handleSubmit(e){
     this.setState({ 
@@ -139,136 +98,258 @@ class AddingUpToTen extends React.Component {
     return (
       <section className="section">
         <div className="container addingUpToTen">
-          <div className="exercise">
-            {exercises[0]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer1"
-            onChange={this.handleChange1}
-            value={this.state.ans1}
-            />
-            {(this.state.answer1 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[0]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange1}
+                value={this.state.ans1}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer1 === 0) || 
              (this.state.exercise1 === this.state.answer1 && checked) || 
               error
-            }
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[1]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer2" 
-            onChange={this.handleChange2} 
-            value={this.state.ans2}
-            />  
-            {(this.state.answer2 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[1]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange2}
+                value={this.state.ans2}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer2 === 0) || 
              (this.state.exercise2 === this.state.answer2 && checked) || 
               error
-            }
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[2]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer3" 
-            onChange={this.handleChange3} 
-            value={this.state.ans3}
-            />  
-            {(this.state.answer3 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[2]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange3}
+                value={this.state.ans3}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer3 === 0) || 
              (this.state.exercise3 === this.state.answer3 && checked) || 
               error
-            }          
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[3]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer4" 
-            onChange={this.handleChange4} 
-            value={this.state.ans4}
-            />  
-            {(this.state.answer4 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[3]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange4}
+                value={this.state.ans4}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer4 === 0) || 
              (this.state.exercise4 === this.state.answer4 && checked) || 
               error
-            }   
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[4]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer5" 
-            onChange={this.handleChange5} 
-            value={this.state.ans5}
-            />  
-            {(this.state.answer5 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[4]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange5}
+                value={this.state.ans5}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer5 === 0) || 
              (this.state.exercise5 === this.state.answer5 && checked) || 
               error
-            }             
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[5]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer6" 
-            onChange={this.handleChange6}
-            value={this.state.ans6}
-            />  
-            {(this.state.answer6 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[5]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange6}
+                value={this.state.ans6}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer6 === 0) || 
              (this.state.exercise6 === this.state.answer6 && checked) || 
               error
-            }            
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[6]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer7" 
-            onChange={this.handleChange7}
-            value={this.state.ans7}
-            />  
-            {(this.state.answer7 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[6]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange7}
+                value={this.state.ans7}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer7 === 0) || 
              (this.state.exercise7 === this.state.answer7 && checked) || 
               error
-            }           
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[7]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer8" 
-            onChange={this.handleChange8}
-            value={this.state.ans8}
-            />  
-            {(this.state.answer8 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[7]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange8}
+                value={this.state.ans8}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer8 === 0) || 
              (this.state.exercise8 === this.state.answer8 && checked) || 
               error
-            }                
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[8]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer9" 
-            onChange={this.handleChange9}
-            value={this.state.ans9}
-            />  
-            {(this.state.answer9 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[8]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange9}
+                value={this.state.ans9}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer9 === 0) || 
              (this.state.exercise9 === this.state.answer9 && checked) || 
               error
-            }              
+              }
+            </div>
           </div>
-          <div className="exercise">
-            {exercises[9]} = <input 
-            className="input" 
-            type="answer" 
-            name="answer10" 
-            onChange={this.handleChange10} 
-            value={this.state.ans10}
-            />  
-            {(this.state.answer10 === 0) || 
+          <div className="oneLine">
+            <div className="exercise">
+              <div className="theExercise">
+                {exercises[9]} 
+              </div>
+              <div>
+                =
+              </div>
+              <div>
+                <input 
+                className="input" 
+                type="answer" 
+                name="answer1"
+                onChange={this.handleChange10}
+                value={this.state.ans10}
+                />
+              </div>
+            </div>
+            <div className="rightOrWrong">
+              {(this.state.answer10 === 0) || 
              (this.state.exercise10 === this.state.answer10 && checked) || 
               error
-            }            
+              }
+            </div>
           </div>
+
+
           <button className="button" onClick={this.handleSubmit}> Check Answers</button>
           <button className="button" onClick={this.handleReset}> I want more exercises!</button>
 

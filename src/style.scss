@@ -8,15 +8,38 @@
     img {
         width: 20px;
         height: 20px;
-        vertical-align: middle;
     }
-    .exercise{
-        margin-bottom: 5px;
-        vertical-align: middle;
-    }
-    .input {
-        width: 80px;
-        height: 30px;
+    .oneLine{
+        display: flex;
+        
+        .exercise{
+            margin-bottom: 5px;
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            .theExercise{
+                width: 60px;
+            }
+        }
+        .longExercise{
+            margin-bottom: 5px;
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            .theExercise{
+                width: 110px;
+            }
+        }
+        .input {
+            width: 80px;
+            height: 30px;
+        }
+        .rightOrWrong{
+            margin-top: 5px;
+            margin-left: 10px;
+        }
     }
 }
 
