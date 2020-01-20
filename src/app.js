@@ -6,6 +6,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import AddingUpToTen from './components/subjects/AddingUpToTen'
 import AddingUpToHundred from './components/subjects/AddingUpToHundred'
 import AddingUpToThousand from './components/subjects/AddingUpToThousand'
+import RoundingToSF from './components/subjects/RoundingToSF'
 import Home from './components/pages/Home'
 import Footer from './components/pages/Footer'
 import Navbar from './components/pages/Navbar'
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Route path="/AddingUpToTen" component={AddingUpToTen} />
           <Route path="/AddingUpToHundred" component={AddingUpToHundred} />
           <Route path="/AddingUpToThousand" component={AddingUpToThousand} />
+          <Route path="/roundingToSF" component={RoundingToSF} />
           <Route path="/" component={Home} />
         </Switch>
         <Footer/>

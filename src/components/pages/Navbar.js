@@ -10,6 +10,7 @@ class Navbar extends React.Component {
                     <Link to="/AddingUpToTen" className="navbar-item has-text-white">Adding up to 10</Link>
                     <Link to="/AddingUpToHundred" className="navbar-item has-text-white">Adding up to 100</Link>
                     <Link to="/AddingUpToThousand" className="navbar-item has-text-white">Adding up to 1000</Link>
+                    <Link to="/RoundingToSF" className="navbar-item has-text-white">Rounding to Sagnnificate Number</Link>
 
                 </div>
             </div>
