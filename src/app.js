@@ -7,6 +7,7 @@ import AddingUpToTen from './components/subjects/AddingUpToTen'
 import AddingUpToHundred from './components/subjects/AddingUpToHundred'
 import AddingUpToThousand from './components/subjects/AddingUpToThousand'
 import RoundingToSF from './components/subjects/RoundingToSF'
+import Equations from './components/subjects/Algebra/Equations'
 import Home from './components/pages/Home'
 import Footer from './components/pages/Footer'
 import Navbar from './components/pages/Navbar'
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Route path="/AddingUpToHundred" component={AddingUpToHundred} />
           <Route path="/AddingUpToThousand" component={AddingUpToThousand} />
           <Route path="/roundingToSF" component={RoundingToSF} />
+          <Route path="/equations" component={Equations} />
           <Route path="/" component={Home} />
         </Switch>
         <Footer/>
