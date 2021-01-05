@@ -41,13 +41,16 @@ const Quadratic = () => {
                   <Mathjax.Node inline>{equation.question}</Mathjax.Node>
                 </span>
                 &nbsp;
-                {equation.answers && (
-                  <input
-                    value={answer}
-                    onChange={onChange}
-                    style={{ width: "50px" }}
-                  ></input>
-                )}
+                {equation.answers &&
+                  equation.answers.map(() => {
+                    return (
+                      <input
+                        value={answer}
+                        onChange={onChange}
+                        style={{ width: "50px", marginRight: "10px" }}
+                      ></input>
+                    );
+                  })}
               </div>
             );
           })}
