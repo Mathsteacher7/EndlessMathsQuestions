@@ -9,6 +9,7 @@
     "build": "webpack -p",
     "serve": "webpack-dev-server",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --coverage",
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "bulma": "^0.8.0",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.3.6",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
